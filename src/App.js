@@ -52,13 +52,25 @@ class App extends React.Component {
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoForm addItem={this.addItem} />
-        {/* <p>{this.state.todos[0].title}</p> */}
-        {this.state.todos.map((tod) => (
-          <TodoList key={tod.id} tod={tod} toggleItem={this.toggleItem} />
-        ))}
+
+        <TodoList allTodos={this.state.todos} toggleItem={this.toggleItem} />
       </div>
     );
   }
 }
 
 export default App;
+
+// render() {
+//   // console.log(this.state.todos);
+//   return (
+//     <div>
+//       <h2>Welcome to your Todo App!</h2>
+//       <TodoForm addItem={this.addItem} />
+//       {/* <p>{this.state.todos[0].title}</p> */}
+//       {this.state.todos.map((tod) => (
+//         <TodoList key={tod.id} tod={tod} toggleItem={this.toggleItem} />
+//       ))}
+//     </div>
+//   );
+// }
