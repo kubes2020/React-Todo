@@ -1,6 +1,8 @@
 import React from "react";
 import "./Todo.css";
 
+//onClick toggles the item to completed
+//className creates line-through with css .item.completed
 const Todo = (props) => {
   return (
     <>

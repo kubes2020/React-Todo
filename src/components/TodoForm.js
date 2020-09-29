@@ -33,6 +33,7 @@ class TodoForm extends React.Component {
             value={this.state.item}
           ></input>
           <button>Add ToDo</button>
+          <button onClick={this.props.clearCompleted}>Clear Completed</button>
         </form>
       </>
     );

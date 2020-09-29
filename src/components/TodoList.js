@@ -3,6 +3,8 @@
 import React from "react";
 import Todo from "./Todo";
 
+//map through todos and pass as props to render in Todo
+//also passing toggleItem fn
 const TodoList = (props) => {
   return (
     <>
@@ -16,13 +18,3 @@ const TodoList = (props) => {
 };
 
 export default TodoList;
-
-// const TodoList = (props) => {
-//     return (
-//       <>
-//         <div onClick={() => props.toggleItem(props.tod.id)}>
-//           <p>{props.tod.title}</p>
-//         </div>
-//       </>
-//     );
-//   };
