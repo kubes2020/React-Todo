@@ -5,7 +5,9 @@ import React from "react";
 const TodoList = (props) => {
   return (
     <>
-      <p>{props.tod.title}</p>
+      <div onClick={() => props.toggleItem(props.tod.id)}>
+        <p>{props.tod.title}</p>
+      </div>
     </>
   );
 };

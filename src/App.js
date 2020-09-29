@@ -25,6 +25,23 @@ class App extends React.Component {
     };
     this.setState({ ...this.state, todos: [...this.state.todos, newItem] });
   };
+
+  toggleItem = (itemId) => {
+    this.setState({
+      todos: this.state.todos.map((item) => {
+        if (item.id === itemId) {
+          console.log("it changed");
+          return {
+            ...item,
+            completed: !item.completed,
+          };
+        } else {
+          return item;
+        }
+      }),
+    });
+  };
+
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
@@ -37,7 +54,7 @@ class App extends React.Component {
         <TodoForm addItem={this.addItem} />
         {/* <p>{this.state.todos[0].title}</p> */}
         {this.state.todos.map((tod) => (
-          <TodoList key={tod.id} tod={tod} />
+          <TodoList key={tod.id} tod={tod} toggleItem={this.toggleItem} />
         ))}
       </div>
     );
